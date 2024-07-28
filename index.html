@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>远涛</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(45deg, #a98c1a, #53021d);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 2.5rem; /* 使用相对单位 */
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.5rem; /* 使用相对单位 */
+        margin-bottom: 30px;
+      }
+
+      button {
+        background-color: #61dafb;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2rem; /* 使用相对单位 */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #21a1f1;
+      }
+
+      #moreMessages {
+        display: none;
+        margin-top: 20px;
+        font-size: 1.2rem; /* 使用相对单位 */
+      }
+
+      img {
+        width: 80%; /* 设置为相对宽度以适应不同屏幕 */
+        max-width: 300px; /* 限制最大宽度 */
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      audio {
+        margin-top: 20px;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem; /* 小屏幕时调整标题大小 */
+        }
+
+        p {
+          font-size: 1.2rem; /* 小屏幕时调整段落大小 */
+        }
+
+        button {
+          font-size: 1rem; /* 小屏幕时调整按钮大小 */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>生日快乐!</h1>
+    <p>祝今天充满快乐与惊喜!</p>
+    <button id="showMessagesButton">显示更多祝福</button>
+
+    <div id="moreMessages">
+      <p>愿每一天都像生日一样特别!</p>
+      <p>愿生活中充满爱和幸福!</p>
+      <p>愿所有的梦想都能成真!</p>
+      <p style="color: aqua">谢谢你，我的朋友！！</p>
+      <p style="color: aqua">我也祝你在成长的道路上一路顺风！！！</p>
+
+      <img
+        src="http://imgos.cn/2024/07/28/66a60c84b3edd.jpg"
+        alt="微笑.jpg"
+        title="微笑.jpg"
+      />
+      <!-- 替换为你的图片 -->
+    </div>
+
+    <audio controls autoplay loop>
+      <source src="skk.mp3" type="audio/mpeg" />
+      您的浏览器不支持音频播放。
+    </audio>
+
+    <script>
+      document
+        .getElementById("showMessagesButton")
+        .addEventListener("click", function () {
+          const messages = document.getElementById("moreMessages");
+          if (
+            messages.style.display === "none" ||
+            messages.style.display === ""
+          ) {
+            messages.style.display = "block";
+            this.textContent = "隐藏祝福";
+          } else {
+            messages.style.display = "none";
+            this.textContent = "显示更多祝福";
+          }
+        });
+    </script>
+  </body>
+</html>
